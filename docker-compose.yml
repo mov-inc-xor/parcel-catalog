@@ -8,6 +8,10 @@ services:
       - "3000:3000"
     volumes:
       - .:/usr/src/parcel-catalog
+    links:
+      - mongo
+    networks:
+      - mongo-compose-network
 
   mongo-express:
     image: mongo-express
